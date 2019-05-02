@@ -6,7 +6,7 @@
 
     <groupId>ru.dl.gunter</groupId>
     <artifactId>Gunter</artifactId>
-    <version>v_1.000.001</version>
+    <version>v_1.000.002</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -21,7 +21,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mustache</artifactId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
