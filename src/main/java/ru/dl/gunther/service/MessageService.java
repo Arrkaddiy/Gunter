@@ -1,10 +1,10 @@
-package ru.dl.gunter.service;
+package ru.dl.gunther.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import ru.dl.gunter.domain.Message;
-import ru.dl.gunter.repos.MessageRepo;
+import ru.dl.gunther.domain.Message;
+import ru.dl.gunther.repos.MessageRepo;
 
 import java.io.IOException;
 import java.util.List;

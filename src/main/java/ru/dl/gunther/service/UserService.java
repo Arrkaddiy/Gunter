@@ -1,13 +1,13 @@
-package ru.dl.gunter.service;
+package ru.dl.gunther.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ru.dl.gunter.domain.Role;
-import ru.dl.gunter.domain.User;
-import ru.dl.gunter.repos.UserRepo;
+import ru.dl.gunther.domain.Role;
+import ru.dl.gunther.domain.User;
+import ru.dl.gunther.repos.UserRepo;
 
 import java.util.Collections;
 import java.util.List;

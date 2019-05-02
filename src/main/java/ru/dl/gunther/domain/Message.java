@@ -1,4 +1,4 @@
-package ru.dl.gunter.domain;
+package ru.dl.gunther.domain;
 
 import javax.persistence.*;
 

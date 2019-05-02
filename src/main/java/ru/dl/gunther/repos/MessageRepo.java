@@ -1,7 +1,7 @@
-package ru.dl.gunter.repos;
+package ru.dl.gunther.repos;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.dl.gunter.domain.Message;
+import ru.dl.gunther.domain.Message;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package ru.dl.gunter.controller;
+package ru.dl.gunther.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

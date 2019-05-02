@@ -1,4 +1,4 @@
-package ru.dl.gunter.service;
+package ru.dl.gunther.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

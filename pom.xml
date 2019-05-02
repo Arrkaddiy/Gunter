@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.dl.gunter</groupId>
-    <artifactId>Gunter</artifactId>
-    <version>v_1.000.004</version>
+    <groupId>ru.dl.gunther</groupId>
+    <artifactId>Gunther</artifactId>
+    <version>v_1.000.010</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

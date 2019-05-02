@@ -1,4 +1,4 @@
-package ru.dl.gunter.config;
+package ru.dl.gunther.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

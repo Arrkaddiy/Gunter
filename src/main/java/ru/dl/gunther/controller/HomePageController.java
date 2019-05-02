@@ -1,4 +1,4 @@
-package ru.dl.gunter.controller;
+package ru.dl.gunther.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import ru.dl.gunter.domain.Message;
-import ru.dl.gunter.domain.User;
-import ru.dl.gunter.service.MessageService;
+import ru.dl.gunther.domain.Message;
+import ru.dl.gunther.domain.User;
+import ru.dl.gunther.service.MessageService;
 
 import java.io.IOException;
 
