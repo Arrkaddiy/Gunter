@@ -5,22 +5,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import ru.dl.gunter.domain.User;
 import ru.dl.gunter.service.UserService;
 
 @Controller
+@RequestMapping("/registration")
 public class RegistrationController {
 
     @Autowired
     private UserService userService;
 
-    @GetMapping("/registration")
+    @GetMapping
     public String registration() {
 
         return "registrationPage";
     }
 
-    @PostMapping("/registration")
+    @PostMapping
     public String addUser(User user, Model model) {
 
         if (!userService.addUser(user)) {

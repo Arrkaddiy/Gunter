@@ -6,7 +6,7 @@
 
     <groupId>ru.dl.gunter</groupId>
     <artifactId>Gunter</artifactId>
-    <version>v_1.000.002</version>
+    <version>v_1.000.003</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

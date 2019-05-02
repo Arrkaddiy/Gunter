@@ -10,6 +10,7 @@ import ru.dl.gunter.domain.User;
 import ru.dl.gunter.repos.UserRepo;
 
 import java.util.Collections;
+import java.util.List;
 
 @Service
 public class UserService implements UserDetailsService {
@@ -35,6 +36,10 @@ public class UserService implements UserDetailsService {
         userRepo.save(user);
 
         return true;
+    }
+
+    public List<User> findAll() {
+        return userRepo.findAll();
     }
 
     public void save(User user) {

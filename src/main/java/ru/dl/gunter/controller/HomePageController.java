@@ -6,19 +6,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.dl.gunter.domain.Message;
 import ru.dl.gunter.domain.User;
 import ru.dl.gunter.service.MessageService;
 
 @Controller
+@RequestMapping("/homepage")
 public class HomePageController {
 
     @Autowired
     private MessageService messageService;
 
 
-    @GetMapping("/homepage")
+    @GetMapping
     public String homePage(@RequestParam(name = "filter", required = false, defaultValue = "") String filter,
                            Model model) {
         Iterable<Message> messages;
@@ -35,7 +37,7 @@ public class HomePageController {
         return "homePagePage";
     }
 
-    @PostMapping("/homepage")
+    @PostMapping
     public String addMessage(@AuthenticationPrincipal User authUser,
                              @RequestParam(name = "tag", required = true) String tag,
                              @RequestParam(name = "head", required = true) String head,
