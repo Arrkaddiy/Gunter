@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import ru.dl.gunter.domain.Message;
 import ru.dl.gunter.domain.User;
 import ru.dl.gunter.service.MessageService;
+
+import java.io.IOException;
 
 @Controller
 @RequestMapping("/homepage")
@@ -42,9 +45,9 @@ public class HomePageController {
                              @RequestParam(name = "tag", required = true) String tag,
                              @RequestParam(name = "head", required = true) String head,
                              @RequestParam(name = "body", required = true) String body,
-                             Model model) {
+                             @RequestParam(name = "file", required = false) MultipartFile file) throws IOException {
 
-        messageService.save(new Message(tag, head, body, authUser));
+        messageService.saveNew(new Message(tag, head, body, authUser), file);
 
         return "redirect:/homepage";
     }
