@@ -1,13 +1,7 @@
 <#import "parts/foundation.ftl" as found>
-<#import "parts/logout.ftl" as logout>
+
 
 <@found.page>
-<div>
-    <@logout.logout />
-</div>
-<div>
-    <a href="/users">Список пользователей</a>
-</div>
 <div>
     <form method="post" enctype="multipart/form-data">
         <div><input type="text" name="tag" placeholder="Введите Tag" required /></div>
