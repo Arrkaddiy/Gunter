@@ -37,6 +37,9 @@ public class HomePageController {
                 case ("author") :
                     messages = messageService.findByAuthor(filter);
                     break;
+                default :
+                    messages = messageService.findAll();
+                    break;
             }
         } else {
             messages = messageService.findAll();
@@ -44,7 +47,6 @@ public class HomePageController {
 
         model.addAttribute("messages", messages);
         model.addAttribute("filter", filter);
-        model.addAttribute("filterType", filterType);
 
         return "homePagePage";
     }

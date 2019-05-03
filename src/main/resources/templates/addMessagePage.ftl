@@ -10,12 +10,15 @@
         <label for="messageBody">Сообщение :</label>
         <input type="text" class="form-control" id="messageBody" placeholder="Сообщение" name="body" required />
     </div>
-    <div class="form-group">
-        <label for="messageFile">Добавьте картинку</label>
-        <input type="file" class="form-control-file" id="messageFile" name="file" placeholder="Добавьте картинку" />
+    <div>Добавьте картинку :</div>
+    <div class="input-group mt-2">
+        <div class="custom-file">
+            <input type="file" name="file" class="custom-file-input" id="inputGroupFile">
+            <label class="custom-file-label" for="inputGroupFile" aria-describedby="inputGroupFileAddon">Выберете фаил</label>
+        </div>
     </div>
     <div>
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
-        <button type="submit" class="btn btn-dark">Добавить</button>
+        <button type="submit" class="btn btn-dark mt-3">Добавить</button>
     </div>
 </@found.page>
