@@ -11,8 +11,16 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/homepage">Домашняя страница<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Pricing<span class="sr-only">(current)</span></a>
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarMessageMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Сообщения
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarMessageMenuLink">
+                    <a class="dropdown-item" href="/message/addmessage">Добавить сообщение</a>
+                    <#if user??>
+                        <a class="dropdown-item" href="/message/${user.id}">Мои сообщения</a>
+                    </#if>
+                </div>
             </li>
             <#if isAdmin>
             <li class="nav-item dropdown active">

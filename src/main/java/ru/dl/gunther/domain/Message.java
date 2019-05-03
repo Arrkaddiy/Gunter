@@ -11,8 +11,6 @@ public class Message {
 
     private String tag;
 
-    private String head;
-
     private String body;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -23,9 +21,8 @@ public class Message {
 
     public Message() {
     }
-    public Message(String tag, String head, String body, User user) {
+    public Message(String tag, String body, User user) {
         this.setTag(tag);
-        this.setHead(head);
         this.setBody(body);
         this.setAuthor(user);
     }
@@ -39,13 +36,6 @@ public class Message {
     }
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getHead() {
-        return head;
-    }
-    public void setHead(String head) {
-        this.head = head;
     }
 
     public String getBody() {

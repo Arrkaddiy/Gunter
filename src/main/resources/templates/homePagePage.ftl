@@ -2,16 +2,6 @@
 
 
 <@found.page>
-<div>
-    <form method="post" enctype="multipart/form-data">
-        <div><input type="text" name="tag" placeholder="Введите Tag" required /></div>
-        <div><input type="text" name="head" placeholder="Введите Тему" required /></div>
-        <div><input type="text" name="body" placeholder="Введите Сообщение" required /></div>
-        <div><input type="file" name="file" placeholder="Добавьте картинку" /></div>
-        <div><input type="hidden" name="_csrf" value="${_csrf.token}" /></div>
-        <button type="submit">Добавить</button>
-    </form>
-</div>
 <div>Список сообщений :</div>
 <div>
     <form method="get" action="/homepage">
@@ -23,7 +13,6 @@
     <div>
         <b>${message.id}</b>
         <b>${message.tag}</b>
-        <b>${message.head}</b>
         <b>${message.body}</b>
         <b>${message.authorName}</b>
         <div>

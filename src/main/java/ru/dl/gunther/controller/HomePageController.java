@@ -43,11 +43,10 @@ public class HomePageController {
     @PostMapping
     public String addMessage(@AuthenticationPrincipal User authUser,
                              @RequestParam(name = "tag", required = true) String tag,
-                             @RequestParam(name = "head", required = true) String head,
                              @RequestParam(name = "body", required = true) String body,
                              @RequestParam(name = "file", required = false) MultipartFile file) throws IOException {
 
-        messageService.saveNew(new Message(tag, head, body, authUser), file);
+        messageService.saveNew(new Message(tag, body, authUser), file);
 
         return "redirect:/homepage";
     }
