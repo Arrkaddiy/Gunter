@@ -15,8 +15,16 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    @Column(name = "username", length = 50, unique = true, nullable = false)
     private String username;
+
+    @Column(name = "password", length = 50, nullable = false)
     private String password;
+
+    @Column(name = "email", length = 50, unique = true)
+    private String email;
+
+    @Column(name = "active", nullable = false)
     private boolean active;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
@@ -43,6 +51,13 @@ public class User implements UserDetails {
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public boolean isActive() {

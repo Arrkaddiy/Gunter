@@ -8,7 +8,7 @@
     </div>
     <div class="form-group">
         <label for="messageBody">Сообщение :</label>
-        <input type="text" class="form-control" id="messageBody" placeholder="Сообщение" name="body" required />
+        <textarea placeholder="Сообщение" name="body"  class="form-control" id="messageBody" rows="3" required></textarea>
     </div>
     <div>Добавьте картинку :</div>
     <div class="input-group mt-2">

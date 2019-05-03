@@ -26,7 +26,7 @@ public class RegistrationController {
     public String addUser(User user, Model model) {
 
         if (!userService.addUser(user)) {
-            model.addAttribute("message", "User is exists!");
+            model.addAttribute("message", "Пользователь с таким \"Login\" уже существует");
             return "registrationPage";
         }
 
