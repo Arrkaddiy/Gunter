@@ -1,6 +1,7 @@
 package ru.dl.gunther.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -40,7 +41,7 @@ public class UserService implements UserDetailsService {
     }
 
     public List<User> findAll() {
-        return userRepo.findAll();
+        return userRepo.findAll(Sort.by("id"));
     }
 
     public Optional<User> findById(Integer id) {return userRepo.findById(id);}

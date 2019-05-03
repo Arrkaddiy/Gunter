@@ -2,7 +2,6 @@ package ru.dl.gunther.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -43,8 +42,7 @@ public class UserController {
     @PostMapping("{user}")
     public String userSave(@RequestParam("userId") User user,
                            @RequestParam(name = "username") String username,
-                           @RequestParam Map<String, String> form,
-                           Model model) {
+                           @RequestParam Map<String, String> form) {
 
         user.getRoles().clear();
         user.setUsername(username);
