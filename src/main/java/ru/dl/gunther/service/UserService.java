@@ -11,6 +11,7 @@ import ru.dl.gunther.repos.UserRepo;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService implements UserDetailsService {
@@ -41,6 +42,8 @@ public class UserService implements UserDetailsService {
     public List<User> findAll() {
         return userRepo.findAll();
     }
+
+    public Optional<User> findById(Integer id) {return userRepo.findById(id);}
 
     public void save(User user) {
         userRepo.save(user);

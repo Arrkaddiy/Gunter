@@ -25,17 +25,26 @@ public class HomePageController {
 
     @GetMapping
     public String homePage(@RequestParam(name = "filter", required = false, defaultValue = "") String filter,
+                           @RequestParam(name = "filterType", required = false, defaultValue = "") String filterType,
                            Model model) {
-        Iterable<Message> messages;
+        Iterable<Message> messages = null;
 
         if (filter != null && !filter.isEmpty()) {
-            messages = messageService.findByTag(filter);
+            switch (filterType) {
+                case ("tag") :
+                    messages = messageService.findByTag(filter);
+                    break;
+                case ("author") :
+                    messages = messageService.findByAuthor(filter);
+                    break;
+            }
         } else {
             messages = messageService.findAll();
         }
 
         model.addAttribute("messages", messages);
         model.addAttribute("filter", filter);
+        model.addAttribute("filterType", filterType);
 
         return "homePagePage";
     }

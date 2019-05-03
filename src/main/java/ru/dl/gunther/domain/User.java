@@ -62,6 +62,7 @@ public class User implements UserDetails {
     public boolean isAdmin() {
         return roles.contains(Role.ADMIN);
     }
+    public boolean isManager() {return roles.contains(Role.MANAGER) || roles.contains(Role.ADMIN);}
 
     @Override
     public boolean isAccountNonExpired() {

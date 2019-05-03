@@ -5,8 +5,17 @@
 <div>Список сообщений :</div>
 <div>
     <form method="get" action="/homepage">
-        <input type="text" name="filter" value="${filter?ifExists}" placeholder="Введите фильтр" />
-        <button type="submit">Найти</button>
+        <div class="input-group">
+                <select class="custom-select col-2" id="inputGroupFilter" name="filterType">
+                    <option selected>Веберете фильтр</option>
+                    <option value="tag">Поиск по Tag</option>
+                    <option value="author">Поиск по Автору</option>
+                </select>
+            <input type="text" class="form-control" name="filter" value="${filter?ifExists}" placeholder="Введите фильтр">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-outline-dark">Найти</button>
+            </div>
+        </div>
     </form>
 </div>
 <#list messages as message>
