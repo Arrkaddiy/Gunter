@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface MessageRepo extends JpaRepository<Message, Integer> {
 
-    List<Message> findByTag(String tag);
-    List<Message> findByAuthor(User user);
+    List<Message> findByTagOrderByIdDesc(String tag);
+    List<Message> findByAuthorOrderByIdDesc(User user);
 }

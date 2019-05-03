@@ -1,6 +1,7 @@
 package ru.dl.gunther.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,12 +25,16 @@ public class MessageService {
     public List<Message> findAll() {
         return messageRepo.findAll();
     }
+    public List<Message> findAllOrderByDesc() {
+        return messageRepo.findAll(Sort.by("id").descending());
+    }
     public List<Message> findByTag(String tag) {
-        return messageRepo.findByTag(tag);
+        return messageRepo.findByTagOrderByIdDesc(tag);
     }
     public List<Message> findByAuthor(String author) {
-        return messageRepo.findByAuthor(userService.loadUserObjByUsername(author));
+        return messageRepo.findByAuthorOrderByIdDesc(userService.loadUserObjByUsername(author));
     }
+
 
     public void save(Message message) {
         messageRepo.save(message);

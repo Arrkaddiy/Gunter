@@ -1,6 +1,7 @@
 <#import "parts/foundation.ftl" as found>
 
 <@found.page>
+<h4>Новое сообщение :</h4>
 <form method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="messageTag">Тема сообщения :</label>

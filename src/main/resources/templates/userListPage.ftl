@@ -1,7 +1,9 @@
 <#import "parts/foundation.ftl" as found>
 
 <@found.page>
-<div>Список пользователей :</div>
+<h4>Список пользователей :</h4>
+
+
 <table>
     <thead>
         <tr>

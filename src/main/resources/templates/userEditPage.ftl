@@ -1,7 +1,7 @@
 <#import "parts/foundation.ftl" as found>
 
 <@found.page>
-<div>Профиль пользователя</div>
+<h4>Профиль пользователя</h4>
 <form action="/users/${user.id}" method="post">
     <div>Id Пользователя :<input type="text" value="${user.id}" name="userId" readonly /></div>
     <div>Login :<input type="text" value="${user.username}" name="username" /></div>

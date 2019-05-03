@@ -9,22 +9,29 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    @Column(name = "tag", length = 50, nullable = false)
     private String tag;
 
+    @Column(name = "body", length = 50, nullable = false)
     private String body;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User author;
 
+    @Column(name = "filename")
     private String filename;
+
+    @Column(name = "date", length = 50, nullable = false)
+    private String date;
 
     public Message() {
     }
-    public Message(String tag, String body, User user) {
+    public Message(String tag, String body, User user, String date) {
         this.setTag(tag);
         this.setBody(body);
         this.setAuthor(user);
+        this.setDate(date);
     }
 
     public String getAuthorName() {
@@ -64,5 +71,12 @@ public class Message {
     }
     public void setFilename(String filename) {
         this.filename = filename;
+    }
+
+    public String getDate() {
+        return date;
+    }
+    public void setDate(String date) {
+        this.date = date;
     }
 }

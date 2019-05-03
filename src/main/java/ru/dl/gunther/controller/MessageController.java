@@ -12,6 +12,9 @@ import ru.dl.gunther.domain.User;
 import ru.dl.gunther.service.MessageService;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 @Controller
 public class MessageController {
@@ -26,12 +29,13 @@ public class MessageController {
     }
 
     @PostMapping("/addmessage")
-    public String addMessageP(@AuthenticationPrincipal User authUser,
-                              @RequestParam(name = "tag", required = true) String tag,
-                              @RequestParam(name = "body", required = true) String body,
-                              @RequestParam(name = "file", required = false) MultipartFile file) throws IOException {
+    public String addMessage(@AuthenticationPrincipal User authUser,
+                             @RequestParam(name = "tag", required = true) String tag,
+                             @RequestParam(name = "body", required = true) String body,
+                             @RequestParam(name = "file", required = false) MultipartFile file) throws IOException {
 
-        messageService.saveNew(new Message(tag, body, authUser), file);
+        String date = new SimpleDateFormat("HH:mm:ss dd-MM-yyyy").format(Calendar.getInstance().getTime());
+        messageService.saveNew(new Message(tag, body, authUser, date), file);
 
         return "redirect:/homepage";
     }
