@@ -40,12 +40,17 @@ public class UserController {
     }
 
     @PostMapping("{user}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String userSave(@RequestParam("userId") User user,
                            @RequestParam(name = "username") String username,
+                           @RequestParam(name = "password") String password,
+                           @RequestParam(name = "email") String email,
                            @RequestParam Map<String, String> form) {
 
         user.getRoles().clear();
         user.setUsername(username);
+        user.setPassword(password);
+        user.setEmail(email);
 
         Set<String> roles = Arrays.stream(Role.values())
                 .map(Role::name)
